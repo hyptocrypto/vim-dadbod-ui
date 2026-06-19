@@ -6,6 +6,11 @@ nnoremap <silent><buffer> <Plug>(DBUI_EditMode) :call db_ui#edit#enter_edit_mode
 omap <silent><buffer> ic :call db_ui#dbout#get_cell_value()<CR>
 
 setlocal foldmethod=expr foldexpr=db_ui#dbout#foldexpr(v:lnum) | silent! normal!zo
+setlocal foldmethod=manual
+setlocal synmaxcol=200
+setlocal nowrap
+setlocal norelativenumber
+setlocal nocursorline
 
 if get(g:, 'db_ui_disable_mappings', 0) || get(g:, 'db_ui_disable_mappings_dbout', 0)
   finish
